@@ -8,6 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var taskRouter = require('./routes/Reservation');
 var ProgrammeRoute = require('./routes/ProgrammeEtude');
+const moduleRoutes = require('./routes/Module');
+const matiereRoutes = require('./routes/Matiere');
+
 
 var app = express();
 
@@ -23,7 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/module', moduleRoutes);
+app.use('/matiere', matiereRoutes);
 app.use('/reservation', taskRouter);
 app.use('/programme', ProgrammeRoute);
 
