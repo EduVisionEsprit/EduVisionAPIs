@@ -10,8 +10,7 @@ var taskRouter = require('./routes/Reservation');
 var ProgrammeRoute = require('./routes/ProgrammeEtude');
 const moduleRoutes = require('./routes/Module');
 const matiereRoutes = require('./routes/Matiere');
-
-
+const materielRoutes = require('./routes/mat')
 var app = express();
 
 // view engine setup
@@ -30,8 +29,7 @@ app.use('/module', moduleRoutes);
 app.use('/matiere', matiereRoutes);
 app.use('/reservation', taskRouter);
 app.use('/programme', ProgrammeRoute);
-
-
+app.use('/materiel', materielRoutes);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
 	next(createError(404));
